@@ -1,9 +1,9 @@
-object Form3: TForm3
-  Left = 387
-  Top = 227
+object Form10: TForm10
+  Left = 192
+  Top = 125
   Width = 928
   Height = 480
-  Caption = 'karyawan'
+  Caption = 'detail pembelian'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -22,9 +22,9 @@ object Form3: TForm3
   object lbll1: TLabel
     Left = 4
     Top = 12
-    Width = 13
-    Height = 15
-    Caption = 'ID'
+    Width = 57
+    Height = 30
+    Caption = 'ID Detail '#13#10'Pembelian'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -33,11 +33,11 @@ object Form3: TForm3
     ParentFont = False
   end
   object lbll3: TLabel
-    Left = 244
+    Left = 212
     Top = 12
-    Width = 52
+    Width = 83
     Height = 16
-    Caption = 'Jabatan'
+    Caption = 'ID Pembelian'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -46,11 +46,11 @@ object Form3: TForm3
     ParentFont = False
   end
   object lbll6: TLabel
-    Left = 528
+    Left = 504
     Top = 8
-    Width = 41
+    Width = 64
     Height = 16
-    Caption = 'No_tlp'
+    Caption = 'ID Barang'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -60,10 +60,10 @@ object Form3: TForm3
   end
   object lbll4: TLabel
     Left = 0
-    Top = 44
-    Width = 35
+    Top = 52
+    Width = 85
     Height = 16
-    Caption = 'Nama'
+    Caption = 'Nama Barang'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -73,10 +73,23 @@ object Form3: TForm3
   end
   object lbll7: TLabel
     Left = 236
-    Top = 44
-    Width = 32
+    Top = 52
+    Width = 39
     Height = 16
-    Caption = 'Email'
+    Caption = 'Harga'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbl1: TLabel
+    Left = 500
+    Top = 52
+    Width = 94
+    Height = 16
+    Caption = 'Jumlah Barang'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -192,38 +205,40 @@ object Form3: TForm3
     Height = 21
     TabOrder = 7
   end
+  object e_2: TEdit
+    Left = 308
+    Top = 8
+    Width = 149
+    Height = 21
+    TabOrder = 8
+  end
   object e_3: TEdit
     Left = 600
     Top = 8
     Width = 205
     Height = 21
-    TabOrder = 8
-  end
-  object e_4: TEdit
-    Left = 72
-    Top = 44
-    Width = 113
-    Height = 21
     TabOrder = 9
   end
-  object e_5: TEdit
-    Left = 296
-    Top = 44
-    Width = 205
+  object e_4: TEdit
+    Left = 88
+    Top = 52
+    Width = 113
     Height = 21
     TabOrder = 10
   end
-  object cbb1: TComboBox
-    Left = 312
-    Top = 8
+  object e_5: TEdit
+    Left = 296
+    Top = 52
+    Width = 185
+    Height = 21
+    TabOrder = 11
+  end
+  object e1: TEdit
+    Left = 604
+    Top = 48
     Width = 149
     Height = 21
-    ItemHeight = 13
-    TabOrder = 11
-    Text = '---PILIH JABATAN---'
-    Items.Strings = (
-      'LAKI-LAKI'
-      'PEREMPUAN')
+    TabOrder = 12
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP

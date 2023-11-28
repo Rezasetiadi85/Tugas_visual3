@@ -1,4 +1,4 @@
-unit Unit3;
+unit Unit11;
 
 interface
 
@@ -8,7 +8,7 @@ uses
   ZDataset, ZAbstractConnection, ZConnection, StdCtrls, Grids, DBGrids;
 
 type
-  TForm3 = class(TForm)
+  TForm11 = class(TForm)
     lbll2: TLabel;
     lbll1: TLabel;
     lbll3: TLabel;
@@ -23,6 +23,7 @@ type
     b5: TButton;
     b6: TButton;
     e_1: TEdit;
+    e_2: TEdit;
     e_3: TEdit;
     e_4: TEdit;
     e_5: TEdit;
@@ -32,7 +33,8 @@ type
     frxdbdtst1: TfrxDBDataset;
     frxrprt1: TfrxReport;
     zqry2: TZQuery;
-    cbb1: TComboBox;
+    lbl1: TLabel;
+    e1: TEdit;
   private
     { Private declarations }
   public
@@ -40,11 +42,10 @@ type
   end;
 
 var
-  Form3: TForm3;
+  Form11: TForm11;
 
 implementation
 
 {$R *.dfm}
 
 end.
- 
