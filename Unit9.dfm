@@ -33,8 +33,8 @@ object Form9: TForm9
     ParentFont = False
   end
   object lbll3: TLabel
-    Left = 244
-    Top = 12
+    Left = 236
+    Top = 44
     Width = 37
     Height = 16
     Caption = 'No tlp'
@@ -47,7 +47,7 @@ object Form9: TForm9
   end
   object lbll6: TLabel
     Left = 504
-    Top = 8
+    Top = 48
     Width = 92
     Height = 16
     Caption = 'ID Pemesanan'
@@ -72,8 +72,8 @@ object Form9: TForm9
     ParentFont = False
   end
   object lbll7: TLabel
-    Left = 204
-    Top = 44
+    Left = 508
+    Top = 12
     Width = 83
     Height = 16
     Caption = 'ID Karyawan'
@@ -85,8 +85,8 @@ object Form9: TForm9
     ParentFont = False
   end
   object lbl1: TLabel
-    Left = 516
-    Top = 44
+    Left = 204
+    Top = 12
     Width = 80
     Height = 16
     Caption = 'ID Costumer'
@@ -109,44 +109,42 @@ object Form9: TForm9
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
     Columns = <
       item
         Expanded = False
         FieldName = 'id'
-        Width = 30
+        Width = 82
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'nama'
+        FieldName = 'tanggal'
+        Width = 98
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'customer_id'
         Width = 100
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'email'
-        Width = 100
+        FieldName = 'No_telp_customer'
+        Width = 116
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'no_hp'
+        FieldName = 'karyawan_id'
+        Width = 101
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'alamat'
-        Width = 200
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'jenis_kelamin'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'tahun_masuk'
+        FieldName = 'pemesanan_id'
+        Width = 92
         Visible = True
       end>
   end
@@ -157,6 +155,7 @@ object Form9: TForm9
     Height = 29
     Caption = 'Baru'
     TabOrder = 1
+    OnClick = b1Click
   end
   object b2: TButton
     Left = 224
@@ -165,6 +164,7 @@ object Form9: TForm9
     Height = 33
     Caption = 'Simpan'
     TabOrder = 2
+    OnClick = b2Click
   end
   object b3: TButton
     Left = 332
@@ -173,6 +173,7 @@ object Form9: TForm9
     Height = 33
     Caption = 'Edit'
     TabOrder = 3
+    OnClick = b3Click
   end
   object b4: TButton
     Left = 432
@@ -181,6 +182,7 @@ object Form9: TForm9
     Height = 33
     Caption = 'Hapus'
     TabOrder = 4
+    OnClick = b4Click
   end
   object b5: TButton
     Left = 540
@@ -189,6 +191,7 @@ object Form9: TForm9
     Height = 33
     Caption = 'Batal'
     TabOrder = 5
+    OnClick = b5Click
   end
   object b6: TButton
     Left = 644
@@ -197,46 +200,47 @@ object Form9: TForm9
     Height = 33
     Caption = 'Print'
     TabOrder = 6
+    OnClick = b6Click
   end
   object e_1: TEdit
-    Left = 72
+    Left = 80
     Top = 8
-    Width = 101
+    Width = 113
     Height = 21
     TabOrder = 7
   end
   object e_2: TEdit
-    Left = 308
-    Top = 8
-    Width = 149
+    Left = 60
+    Top = 40
+    Width = 133
     Height = 21
     TabOrder = 8
   end
   object e_3: TEdit
-    Left = 600
+    Left = 288
     Top = 8
     Width = 205
     Height = 21
     TabOrder = 9
   end
   object e_4: TEdit
-    Left = 72
+    Left = 296
     Top = 44
-    Width = 113
+    Width = 201
     Height = 21
     TabOrder = 10
   end
   object e_5: TEdit
-    Left = 296
-    Top = 44
-    Width = 205
+    Left = 600
+    Top = 12
+    Width = 161
     Height = 21
     TabOrder = 11
   end
-  object e1: TEdit
+  object e_6: TEdit
     Left = 604
-    Top = 40
-    Width = 149
+    Top = 48
+    Width = 157
     Height = 21
     TabOrder = 12
   end
@@ -244,19 +248,21 @@ object Form9: TForm9
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
+    Connected = True
     HostName = 'Localhost'
     Port = 3306
-    Database = 'visual3'
+    Database = 'db_ats'
     User = 'root'
     Protocol = 'mysql'
-    LibraryLocation = 'D:\Kuliah 5\Visual3\Visual3 Tugas\libmysql.dll'
+    LibraryLocation = 'C:\Users\user\Documents\tugas_visual3\libmysql.dll'
     Left = 8
     Top = 220
   end
   object zqry1: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
-      'select * from userr'
+      'select * from transaksi'
       ''
       '')
     Params = <>
@@ -609,8 +615,9 @@ object Form9: TForm9
   end
   object zqry2: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
-      'select * from userr')
+      'select * from transaksi')
     Params = <>
     Left = 808
     Top = 132
