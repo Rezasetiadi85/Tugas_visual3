@@ -20,11 +20,11 @@ object Form11: TForm11
     Height = 13
   end
   object lbll1: TLabel
-    Left = 4
+    Left = 28
     Top = 12
-    Width = 55
-    Height = 30
-    Caption = 'ID Detail '#13#10'Penjualan'
+    Width = 13
+    Height = 15
+    Caption = 'ID'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -109,44 +109,41 @@ object Form11: TForm11
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
     Columns = <
       item
         Expanded = False
         FieldName = 'id'
-        Width = 30
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'nama'
-        Width = 100
+        FieldName = 'penjualan_id'
+        Width = 110
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'email'
-        Width = 100
+        FieldName = 'barang_id'
+        Width = 116
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'no_hp'
+        FieldName = 'nm_barang'
+        Width = 137
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'alamat'
-        Width = 200
+        FieldName = 'jumlah_barang'
+        Width = 149
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'jenis_kelamin'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'tahun_masuk'
+        FieldName = 'jumlah_harga'
+        Width = 165
         Visible = True
       end>
   end
@@ -157,6 +154,7 @@ object Form11: TForm11
     Height = 29
     Caption = 'Baru'
     TabOrder = 1
+    OnClick = b1Click
   end
   object b2: TButton
     Left = 224
@@ -165,6 +163,7 @@ object Form11: TForm11
     Height = 33
     Caption = 'Simpan'
     TabOrder = 2
+    OnClick = b2Click
   end
   object b3: TButton
     Left = 332
@@ -173,6 +172,7 @@ object Form11: TForm11
     Height = 33
     Caption = 'Edit'
     TabOrder = 3
+    OnClick = b3Click
   end
   object b4: TButton
     Left = 432
@@ -181,6 +181,7 @@ object Form11: TForm11
     Height = 33
     Caption = 'Hapus'
     TabOrder = 4
+    OnClick = b4Click
   end
   object b5: TButton
     Left = 540
@@ -189,6 +190,7 @@ object Form11: TForm11
     Height = 33
     Caption = 'Batal'
     TabOrder = 5
+    OnClick = b5Click
   end
   object b6: TButton
     Left = 644
@@ -197,6 +199,7 @@ object Form11: TForm11
     Height = 33
     Caption = 'Print'
     TabOrder = 6
+    OnClick = b6Click
   end
   object e_1: TEdit
     Left = 72
@@ -233,7 +236,7 @@ object Form11: TForm11
     Height = 21
     TabOrder = 11
   end
-  object e1: TEdit
+  object e_6: TEdit
     Left = 604
     Top = 48
     Width = 149
@@ -244,19 +247,21 @@ object Form11: TForm11
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
+    Connected = True
     HostName = 'Localhost'
     Port = 3306
-    Database = 'visual3'
+    Database = 'db_ats'
     User = 'root'
     Protocol = 'mysql'
-    LibraryLocation = 'D:\Kuliah 5\Visual3\Visual3 Tugas\libmysql.dll'
+    LibraryLocation = 'C:\Users\user\Documents\tugas_visual3\libmysql.dll'
     Left = 8
     Top = 220
   end
   object zqry1: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
-      'select * from userr'
+      'select * from detail_transaksi_penjualan'
       ''
       '')
     Params = <>
@@ -330,7 +335,7 @@ object Form11: TForm11
           Font.Style = [fsBold]
           HAlign = haCenter
           Memo.UTF8 = (
-            'LAPORAN DATA USER')
+            'LAPORAN DATA DETAIL PENJUALAN')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -368,7 +373,7 @@ object Form11: TForm11
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'NAMA')
+            'ID PENJUALAN')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -385,7 +390,7 @@ object Form11: TForm11
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'EMAIL')
+            'ID BARANG')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -402,7 +407,7 @@ object Form11: TForm11
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'NO HP')
+            'NAMA BARANG')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -419,7 +424,7 @@ object Form11: TForm11
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'ALAMAT')
+            'JUMLAH BARANG')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -436,24 +441,7 @@ object Form11: TForm11
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'JENIS KELAMIN')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo14: TfrxMemoView
-          Left = 597.165740000000000000
-          Width = 120.944960000000000000
-          Height = 34.015770000000000000
-          ShowHint = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'TAHUN MASUK')
+            'JUMLAH HARGA')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -489,7 +477,7 @@ object Form11: TForm11
           Width = 98.267780000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'nama'
+          DataField = 'penjualan_id'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -500,7 +488,7 @@ object Form11: TForm11
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."nama"]')
+            '[frxDBDataset."penjualan_id"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -509,7 +497,7 @@ object Form11: TForm11
           Width = 147.401670000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'no_hp'
+          DataField = 'nm_barang'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -520,7 +508,7 @@ object Form11: TForm11
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."no_hp"]')
+            '[frxDBDataset."nm_barang"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -529,7 +517,7 @@ object Form11: TForm11
           Width = 105.826840000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'alamat'
+          DataField = 'jumlah_barang'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -540,7 +528,7 @@ object Form11: TForm11
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."alamat"]')
+            '[frxDBDataset."jumlah_barang"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -549,7 +537,7 @@ object Form11: TForm11
           Width = 117.165430000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'jenis_kelamin'
+          DataField = 'jumlah_harga'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -560,7 +548,7 @@ object Form11: TForm11
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."jenis_kelamin"]')
+            '[frxDBDataset."jumlah_harga"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -569,7 +557,7 @@ object Form11: TForm11
           Width = 94.488250000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'email'
+          DataField = 'barang_id'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -580,27 +568,7 @@ object Form11: TForm11
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."email"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo15: TfrxMemoView
-          Left = 597.165740000000000000
-          Width = 120.944960000000000000
-          Height = 71.811070000000000000
-          ShowHint = False
-          DataField = 'tahun_masuk'
-          DataSet = frxdbdtst1
-          DataSetName = 'frxDBDataset'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBDataset."tahun_masuk"]')
+            '[frxDBDataset."barang_id"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -609,8 +577,9 @@ object Form11: TForm11
   end
   object zqry2: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
-      'select * from userr')
+      'select * from detail_transaksi_penjualan')
     Params = <>
     Left = 808
     Top = 132

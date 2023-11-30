@@ -177,17 +177,17 @@ object Form6: TForm6
     Height = 21
     TabOrder = 8
   end
-  object e_2: TEdit
-    Left = 72
-    Top = 44
-    Width = 113
-    Height = 21
-    TabOrder = 9
-  end
   object e_4: TEdit
     Left = 304
     Top = 60
     Width = 205
+    Height = 21
+    TabOrder = 9
+  end
+  object e_2: TEdit
+    Left = 72
+    Top = 44
+    Width = 113
     Height = 21
     TabOrder = 10
   end

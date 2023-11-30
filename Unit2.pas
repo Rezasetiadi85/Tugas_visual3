@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus;
+  Dialogs, Menus, jpeg, ExtCtrls;
 
 type
   TForm2 = class(TForm)
@@ -19,6 +19,7 @@ type
     ransaksi1: TMenuItem;
     DetailPenjualan1: TMenuItem;
     DetailPembelian1: TMenuItem;
+    img1: TImage;
     procedure Karyawan1Click(Sender: TObject);
     procedure Customer1Click(Sender: TObject);
     procedure Barang1Click(Sender: TObject);

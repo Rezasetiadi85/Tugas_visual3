@@ -21,16 +21,18 @@ object Form3: TForm3
     Height = 13
   end
   object lbll1: TLabel
-    Left = 4
+    Left = 12
     Top = 12
     Width = 13
     Height = 15
     Caption = 'ID'
+    Color = clBtnFace
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'Times New Roman'
     Font.Style = [fsBold]
+    ParentColor = False
     ParentFont = False
   end
   object lbll3: TLabel
@@ -39,11 +41,13 @@ object Form3: TForm3
     Width = 52
     Height = 16
     Caption = 'Jabatan'
+    Color = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
+    ParentColor = False
     ParentFont = False
   end
   object lbll6: TLabel
@@ -52,24 +56,28 @@ object Form3: TForm3
     Width = 41
     Height = 16
     Caption = 'No_tlp'
+    Color = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
+    ParentColor = False
     ParentFont = False
   end
   object lbll4: TLabel
-    Left = 0
-    Top = 44
+    Left = 8
+    Top = 52
     Width = 35
     Height = 16
     Caption = 'Nama'
+    Color = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
+    ParentColor = False
     ParentFont = False
   end
   object lbll7: TLabel
@@ -78,11 +86,13 @@ object Form3: TForm3
     Width = 32
     Height = 16
     Caption = 'Email'
+    Color = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
+    ParentColor = False
     ParentFont = False
   end
   object dbgrd1: TDBGrid
