@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, frxClass, frxDBSet, DB, ZAbstractRODataset, ZAbstractDataset,
   ZDataset, ZAbstractConnection, ZConnection, StdCtrls, Grids, DBGrids,
-  ComCtrls;
+  ComCtrls, jpeg, ExtCtrls;
 
 type
   TForm6 = class(TForm)
@@ -32,6 +32,7 @@ type
     frxrprt1: TfrxReport;
     zqry2: TZQuery;
     e_2: TEdit;
+    img1: TImage;
     procedure b1Click(Sender: TObject);
     procedure b2Click(Sender: TObject);
     procedure b3Click(Sender: TObject);

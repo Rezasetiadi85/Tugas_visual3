@@ -7659,7 +7659,7 @@ object Form2: TForm2
     Left = 64
     Top = 40
     object menu1: TMenuItem
-      Caption = 'menu'
+      Caption = 'MENU'
       object Karyawan1: TMenuItem
         Caption = 'Karyawan'
         OnClick = Karyawan1Click
@@ -7696,6 +7696,10 @@ object Form2: TForm2
         Caption = 'Detail Pembelian'
         OnClick = DetailPembelian1Click
       end
+    end
+    object LOGOUT1: TMenuItem
+      Caption = 'LOGOUT'#13#10
+      OnClick = LOGOUT1Click
     end
   end
 end

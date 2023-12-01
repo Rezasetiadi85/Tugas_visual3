@@ -34,6 +34,7 @@ type
     frxrprt1: TfrxReport;
     zqry2: TZQuery;
     cbb1: TComboBox;
+    img1: TImage;
     procedure b1Click(Sender: TObject);
     procedure b2Click(Sender: TObject);
     procedure b3Click(Sender: TObject);

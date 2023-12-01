@@ -20,6 +20,7 @@ type
     DetailPenjualan1: TMenuItem;
     DetailPembelian1: TMenuItem;
     img1: TImage;
+    LOGOUT1: TMenuItem;
     procedure Karyawan1Click(Sender: TObject);
     procedure Customer1Click(Sender: TObject);
     procedure Barang1Click(Sender: TObject);
@@ -29,6 +30,7 @@ type
     procedure ransaksi1Click(Sender: TObject);
     procedure DetailPenjualan1Click(Sender: TObject);
     procedure DetailPembelian1Click(Sender: TObject);
+    procedure LOGOUT1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -89,5 +91,14 @@ begin
 form10.show;
 end;
 
+procedure TForm2.LOGOUT1Click(Sender: TObject);
+begin
+
+if application.MessageBox('Yakin ingin logout?','Konfirmasi Ulang',MB_YesNo)=ID_Yes then
+begin
+Form2.Close;
+
+end;
+end;
+
 end.
- 
