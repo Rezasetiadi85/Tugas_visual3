@@ -11,6 +11,7 @@ object Form7: TForm7
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object lbll2: TLabel
@@ -143,7 +144,7 @@ object Form7: TForm7
       item
         Expanded = False
         FieldName = 'no_penjualan'
-        Width = 150
+        Width = 128
         Visible = True
       end>
   end

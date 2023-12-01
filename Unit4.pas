@@ -119,7 +119,7 @@ end else
 begin
  ShowMessage('DATA BERHASIL DIUPDATE!');
 zqry1.SQL.Clear;
-zqry1.SQL.Add('Update customer set id= "'+e_1.Text+'",nm_customer="'+e_2.Text+'",alamat="'+e_3.Text+'",no_telp="'+e_4.Text+'" where id'+id+'"');
+zqry1.SQL.Add('Update customer set id= "'+e_1.Text+'",nm_customer="'+e_2.Text+'",alamat="'+e_3.Text+'",no_telp="'+e_4.Text+'" where id="'+id+'"');
 zqry1. ExecSQL;
 
 zqry1.SQL.Clear;
@@ -161,6 +161,7 @@ end;
 
 procedure TForm4.posisiawal;
 begin
+bersih;
 b1.Enabled:= True;
 b2.Enabled:= False;
 b3.Enabled:= False;
@@ -203,18 +204,7 @@ end;
 
 procedure TForm4.FormShow(Sender: TObject);
 begin
-bersih;
-b1.Enabled:=true;
-b2.Enabled:=false;
-b3.Enabled:=false;
-b4.Enabled:=false;
-b5.Enabled:=false;
-b6.Enabled:=false;
-e_1.Enabled:= false;
-e_2.Enabled:= false;
-e_3.Enabled:= false;
-e_4.Enabled:= false;
-
+posisiawal;
 end;
 
 end.

@@ -161,6 +161,7 @@ end;
 
 procedure TForm3.posisiawal;
 begin
+bersih;
 b1.Enabled:= True;
 b2.Enabled:= False;
 b3.Enabled:= False;
@@ -212,19 +213,7 @@ end;
 
 procedure TForm3.FormShow(Sender: TObject);
 begin
-bersih;
-b1.Enabled:=true;
-b2.Enabled:=false;
-b3.Enabled:=false;
-b4.Enabled:=false;
-b5.Enabled:=false;
-b6.Enabled:=false;
-e_1.Enabled:= false;
-e_2.Enabled:= false;
-e_3.Enabled:= false;
-e_4.Enabled:= false;
-cbb1.Enabled:= false;
-
+posisiawal;
 end;
 
 procedure TForm3.b6Click(Sender: TObject);

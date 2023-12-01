@@ -118,7 +118,7 @@ end else
 begin
  ShowMessage('DATA BERHASIL DIUPDATE!');
 zqry1.SQL.Clear;
-zqry1.SQL.Add('Update pembelian set id= "'+e_1.Text+'",tgl_pembelian="'+e_2.Text+'",jumlah_pembelian="'+e_3.Text+'",total="'+e_4.Text+'" where id'+id+'"');
+zqry1.SQL.Add('Update pembelian set id= "'+e_1.Text+'",tgl_pembelian="'+e_2.Text+'",jumlah_pembelian="'+e_3.Text+'",total="'+e_4.Text+'" where id="'+id+'"');
 zqry1. ExecSQL;
 
 zqry1.SQL.Clear;
@@ -179,6 +179,7 @@ end;
 
 procedure TForm6.posisiawal;
 begin
+bersih;
 b1.Enabled:= True;
 b2.Enabled:= False;
 b3.Enabled:= False;
@@ -202,17 +203,7 @@ end;
 
 procedure TForm6.FormShow(Sender: TObject);
 begin
-bersih;
-b1.Enabled:=true;
-b2.Enabled:=false;
-b3.Enabled:=false;
-b4.Enabled:=false;
-b5.Enabled:=false;
-b6.Enabled:=false;
-e_1.Enabled:= false;
-e_2.Enabled:= false;
-e_3.Enabled:= false;
-e_4.Enabled:= false;
+posisiawal;
 
 end;
 
